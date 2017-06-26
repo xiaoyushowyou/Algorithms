@@ -79,12 +79,23 @@ class solution:
 
 class solution:
     def PascalTri(self,numR):
-    
-    sol={}
-    for i range(numR):
-        sol[i]=[]
-    
-    print (sol)
-    
+        sol={}
+        sol[1]=[1]
+        sol[2]=[1,1]
+        print (sol)
+        temp={}
+        for i in range(3,numR+1):
+            temp[0]=1
+            temp[i-1]=1
+            print (temp[-1])
+            for j in range(1,i-1):
+                temp[j]=sol[i-1][j-1]+sol[i-1][j]
+            sol[i]=temp
+            
+        
+        
+        
+        print (sol)
+        
     PascalTri(self,5)
         
