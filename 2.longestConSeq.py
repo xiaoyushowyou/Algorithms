@@ -77,25 +77,24 @@ class solution:
  # [1,4,6,4,1]
 # ]
 
+#We can use numpy package to create multiple dimention matrix
 class solution:
-    def PascalTri(self,numR):
-        sol={}
-        sol[1]=[1]
-        sol[2]=[1,1]
+    def PascalTri(numR):
+        sol=[]
+        sol.append([1])
+        sol.append([1,1])
         print (sol)
-        temp={}
-        for i in range(3,numR+1):
-            temp[0]=1
-            temp[i-1]=1
-            print (temp[-1])
-            for j in range(1,i-1):
-                temp[j]=sol[i-1][j-1]+sol[i-1][j]
-            sol[i]=temp
-            
-        
-        
-        
+        for i in range(2,numR):
+            temp=[]
+            temp.append(1)
+            print (i,temp)
+            for j in range(1,i):
+                temp.append(sol[i-1][j-1]+sol[i-1][j])
+                print (temp)
+            temp.append(1)
+            print (temp)
+            sol.append(temp)
         print (sol)
         
-    PascalTri(self,5)
+    PascalTri(5)
         
