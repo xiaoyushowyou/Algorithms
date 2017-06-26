@@ -96,5 +96,29 @@ class solution:
             sol.append(temp)
         print (sol)
         
-    PascalTri(5)
-        
+    #PascalTri(5)
+
+    
+    
+ #_________________________________________________________________
+# Given an index k, return the kth row of the Pascal's triangle.
+# For example, given k = 3, Return [1,3,3,1].
+# Due to the limitation to space, O(n), we can only create one dimentional metrix
+
+class solution:
+    def PascalTri2(numR):
+        sol=[1,1]
+        if numR==1:
+            return [1]
+        elif numR==2:
+            return [1,1]
+        else:
+            for i in range(3,numR+1):
+                temp=[]
+                temp.append(1)
+                for j in range(1,i-1):                    
+                    temp.append(sol[j-1]+sol[j])
+                temp.append(1)
+                sol=temp
+            return sol
+    print(PascalTri2(5))
