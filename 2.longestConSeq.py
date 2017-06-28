@@ -65,6 +65,26 @@ class solution:
     #target=5  
     #print(twoSum(self,numbers,target))
 
+#twosum proble, last one didn't work for the list which have same numbers [3,3]
+class twoSum2(object):
+    def twoSum2(nums, target):
+        numbers=nums
+        numA=len(numbers)
+        myDic={}
+        
+        if numA<=1:
+            return -1
+        
+        for i in range(numA):
+            if numbers[i] in myDic:
+                return i,myDic[numbers[i]]
+            else:
+                myDic[target-numbers[i]]=i
+
+    nums=[3,3]
+    target=6
+    print (twoSum2(nums,target))
+
 #Threesum probelm
 #Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 #Note: Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c) The solution set must not contain duplicate triplets.
@@ -89,8 +109,19 @@ class solution:
     
     print(threeSum(myArray,target))
                     
-        
-
+#Threesum Problem, try to get the answer equals to 0
+class solution:
+    def threeSum2(numbers):
+        myDic={}
+        numElm=len(numbers)
+        if numElm<3:
+            return False
+        for i in range(numElm):
+            for j in range (i+1,numElm)
+                if sum=numbers[i]+numbers[j] in myDic:
+                    return numbers[i],numbers[j],myDic[sum]
+                else:
+                    myDic[sum]=
 
 #----------------------------------------------------------------------------#
 # Given numRows, generate the first numRows of Pascal's triangle.
