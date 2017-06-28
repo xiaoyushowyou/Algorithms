@@ -64,7 +64,34 @@ class solution:
     #numbers=[1,2,3,4,5]
     #target=5  
     #print(twoSum(self,numbers,target))
+
+#Threesum probelm
+#Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+#Note: Elements in a triplet (a,b,c) must be in non-descending order. (ie, a ≤ b ≤ c) The solution set must not contain duplicate triplets.
+#Improvement: whether it equals to a certain number 
+
+class solution:
+    def threeSum(myArray,target):
+        numElm=len(myArray)       
         
+        if numElm<3:
+            return 0
+        
+        for i in range(numElm):
+            for j in range(i+1,numElm):
+                
+                temp=int(target-myArray[i]-myArray[j])
+                if temp in myArray:
+                    return myArray[i],myArray[j],temp
+                    
+    myArray=[1,2,3,4,5]
+    target=9
+    
+    print(threeSum(myArray,target))
+                    
+        
+
+
 #----------------------------------------------------------------------------#
 # Given numRows, generate the first numRows of Pascal's triangle.
 # For example, given numRows = 5, Return
@@ -121,4 +148,4 @@ class solution:
                 temp.append(1)
                 sol=temp
             return sol
-    print(PascalTri2(5))
+    #print(PascalTri2(5))
